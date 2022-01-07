@@ -1,0 +1,34 @@
+{
+  "name": "adalo-cvs-import",
+  "description": "Spreadsheet data uploader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "author": "Steven McKeown",
+  "scripts": {
+    "start": "adalo dev",
+    "login": "adalo login",
+    "publish": "adalo publish"
+  },
+  "adalo": {
+    "logo": "./example-logo.png",
+    "displayName": "Spreadsheet Importer",
+    "components": [
+      {
+        "name": "DataImporter",
+        "manifest": "./src/components/DataImporter/manifest.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@adalo/cli": "^0.0.45",
+    "react": "^16.9.0",
+    "react-art": "^16.6.0",
+    "react-dom": "^16.9.0",
+    "react-native-web": "^0.9.5"
+  },
+  "dependencies": {
+    "react-native-document-picker": "^7.1.3",
+    "xlsx": "^0.17.4"
+  }
+}

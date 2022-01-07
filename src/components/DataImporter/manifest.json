@@ -1,0 +1,496 @@
+{
+  "displayName": "Data Importer",
+  "defaultWidth": 160,
+  "defaultHeight": 160,
+  "resizeX": true,
+  "resizeY": true,
+  "components": "./index.js",
+  "icon": "./example-thumbnail.png",
+  "props": [
+    {
+      "name": "uploadTrue",
+      "displayName": "To start the upload, set this to true",
+      "type": "text"
+    },
+    {
+      "name": "worksheetHaveHeaders",
+      "displayName": "Does the worksheet have a header row (i.e. skip the first row if this is 'true')? ",
+      "type": "text"
+    },
+    {
+      "name": "textToDiplay",
+      "displayName": "Text to display",
+      "type": "text",
+      "defaultValue": "Drag and drop here, or",
+      "styles": {
+        "fontFamily": "@body",
+        "color": "@text",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "name": "textToDiplayOnDrop",
+      "displayName": "Text to display when a file is about to be dropped",
+      "type": "text",
+      "defaultValue": "Drop here ;)",
+      "styles": {
+        "fontFamily": "@body",
+        "color": "@text",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "name": "browseTextToDiplay",
+      "displayName": "Browse text to display",
+      "type": "text",
+      "defaultValue": "Browse",
+      "styles": {
+        "fontFamily": "@body",
+        "color": "@text",
+        "fontWeight": "normal"
+      }
+    },
+    {
+      "name": "borderColor",
+      "displayName": "Border color",
+      "type": "color",
+      "defaultValue": "@secondary"
+    },
+    {
+      "name": "borderType",
+      "displayName": "Border type",
+      "type": "text",
+      "defaultValue": "dashed",
+      "control": {
+        "type": "menu",
+        "options": [
+          { "label": "Dashed", "value": "dashed" },
+          { "label": "Dotted", "value": "dotted" },
+          { "label": "Double", "value": "double" },
+          { "label": "Groove", "value": "groove" },
+          { "label": "Hidden", "value": "hidden" },
+          { "label": "Inset", "value": "inset" },
+          { "label": "Outset", "value": "outset" },
+          { "label": "Ridge", "value": "ridge" },
+          { "label": "Solid", "value": "solid" }
+        ]
+      }
+    },
+    {
+      "name": "borderWidth",
+      "displayName": "Border width",
+      "type": "number",
+      "defaultValue": 1,
+      "control": {
+        "type": "slider",
+        "min": 0,
+        "max": 50
+      }
+    },
+    {
+      "name": "backgroundColor",
+      "displayName": "Background Color",
+      "type": "color",
+      "defaultValue": "@primary"
+    },
+    {
+      "name": "onSample",
+      "displayName": "Triggered on sample data, before upload",
+      "type": "action",
+      "arguments": [
+        {
+          "displayName": "Total Rows",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 1 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 2 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 3 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 4 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 5 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 6 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 7 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 8 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 9 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 10 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 11 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 12 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 13 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 14 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 15 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 1 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 2 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 3 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 4 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 5 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 6 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 7 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 8 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 9 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 10 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 11 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 12 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 13 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 14 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 15 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 1 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 2 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 3 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 4 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 5 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 6 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 7 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 8 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 9 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 10 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 11 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 12 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 13 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 14 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 15 as date",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "onUpload",
+      "displayName": "Triggered on upload, this will trigger for every record",
+      "type": "action",
+      "arguments": [
+        {
+          "displayName": "Current Row",
+          "type": "number"
+        },
+        {
+          "displayName": "Total Rows",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 1 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 2 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 3 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 4 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 5 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 6 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 7 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 8 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 9 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 10 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 11 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 12 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 13 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 14 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 15 as text",
+          "type": "text"
+        },
+        {
+          "displayName": "Column 1 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 2 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 3 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 4 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 5 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 6 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 7 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 8 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 9 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 10 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 11 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 12 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 13 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 14 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 15 as number",
+          "type": "number"
+        },
+        {
+          "displayName": "Column 1 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 2 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 3 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 4 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 5 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 6 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 7 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 8 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 9 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 10 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 11 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 12 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 13 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 14 as date",
+          "type": "date"
+        },
+        {
+          "displayName": "Column 15 as date",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "onEmptyFile",
+      "displayName": "Triggered if there are no rows to read",
+      "type": "action"
+    },
+    {
+      "name": "onError",
+      "displayName": "Triggered if there is an error",
+      "type": "action",
+      "arguments": [
+        { "displayName": "Message", "type": "text" }
+      ]
+    }
+  ]
+}
